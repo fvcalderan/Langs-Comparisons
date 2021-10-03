@@ -13,7 +13,6 @@ class nn{
 
             min_i = (dist <= (min_d=Math.min(dist, min_d))) ? i : min_i;
         }
-
         System.out.println(min_i);
     }
 }

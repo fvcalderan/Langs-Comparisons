@@ -1,6 +1,5 @@
 // nevesuser
 #include <stdio.h>
-
 int main(void)
 {
     int points[][3] = {{1, 2, 3}, {3, 4, 5}, {5, 6, 7}},
@@ -21,6 +20,5 @@ int main(void)
     }
 
     printf("%d\n", min_i);
-
     return 0;
 }
