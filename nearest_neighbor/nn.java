@@ -1,18 +1,16 @@
-class nn{
+import java.util.stream.*;
+import java.util.*;
+
+public class nn {
     public static void main(String[] args) {
-        int points[][] = {{1, 2, 3}, {3, 4, 5}, {5, 6, 7}},
-            qpoint[] = {3, 6, 5},
-            min_i = -1,
-            min_d = 2147483647;
+        double[][] points = {{1, 2, 3}, {3, 4, 5}, {5, 6, 7}};
+        double[]   qpoint = {3, 6, 5};
 
-        for (int i = 0; i < points.length; i++) {
-            int dist = 0;
-
-            for (int j = 0; j < points.length; j++)
-                dist += Math.pow(points[i][j] - qpoint[j], 2);
-
-            min_i = (dist <= (min_d=Math.min(dist, min_d))) ? i : min_i;
-        }
-        System.out.println(min_i);
+        List<Double> vals = new ArrayList<>();
+        Arrays.stream(points).forEach(p -> vals.add(IntStream
+            .range(0, p.length)
+            .mapToObj(i -> Math.pow(p[i] - qpoint[i], 2))
+            .reduce(0.0, (Double a, Double b) -> a + b)));
+        System.out.println(vals.indexOf(Collections.min(vals)));
     }
 }

@@ -2,10 +2,9 @@
 #include <stdio.h>
 int main(void)
 {
-    int points[][3] = {{1, 2, 3}, {3, 4, 5}, {5, 6, 7}},
-        qpoint[] = {3, 6, 5},
-        min_i = -1,
-        min_d = 2147483647;
+    double points[][3] = {{1, 2, 3}, {3, 4, 5}, {5, 6, 7}},
+           qpoint[] = {3, 6, 5};
+    int min_i = -1, min_d = 2147483647;
 
     for (int i = 0; i < sizeof(points)/sizeof(*points); ++i) {
         int dist = 0;
